@@ -8,12 +8,15 @@ public class Student {
     private String regNum;
 
     Book borrowedBooks[] = new Book[3];
-    public int bookCount = 0;
+    private int bookCount = 0;
 
     Scanner input = new Scanner(System.in);
 
     public Student() {
         System.out.println("Enter Student Name:");
         this.studentName = input.nextLine();
+
+        System.out.println("Enter Reg Number");
+        this.regNum = input.nextLine();
     }
 }
