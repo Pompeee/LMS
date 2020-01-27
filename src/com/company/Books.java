@@ -41,5 +41,64 @@ public class Books {
         }
     }
 
+    public void searchBySno() {
+
+        System.out.println("\t\t\t\tSearch by serial number\n");
+
+        int sNo;
+        System.out.println("Enter serial number of book");
+        sNo = input.nextInt();
+
+        int flag = 0;
+        System.out.println("S.No\t\tName\t\tAuthor\t\tAvailable Qty\t\tTotal Qty");
+        for (int i = 0; i < count; i++) {
+
+            if (sNo == theBooks[i].sNo) {
+
+                System.out.println(theBooks[i].sNo + "\t\t" + theBooks[i].bookName + "\t\t" + theBooks[i].authorName + "\t\t" + theBooks[i].bookQtyCopy + "\t\t" + theBooks[i].bookQty);
+                flag++;
+                return;
+            }
+        }
+        if (flag == 0)
+            System.out.println("No book for serial number " + sNo + " found.");
+    }
+
+    public void searchByAuthorName() {
+
+        System.out.println("\t\t\t\tSEARCH BY AUTHOR'S NAME");
+        input.nextLine();
+        System.out.println("Enter Author Name:");
+        String authorName = input.nextLine();
+        int flag = 0;
+        System.out.println("S.No\t\tName\t\tAuthor\t\tAvailable Qty\t\tTotal Qty");
+        for (int i = 0; i < count; i++) {
+
+            if (authorName.equalsIgnoreCase(theBooks[i].authorName)) {
+
+                System.out.println(theBooks[i].sNo + "\t\t" + theBooks[i].bookName + "\t\t" + theBooks[i].authorName + "\t\t" +
+                        theBooks[i].bookQtyCopy + "\t\t" + theBooks[i].bookQty);
+                flag++;
+            }
+
+        }
+        if (flag == 0)
+            System.out.println("No Books of " + authorName + " Found.");
+
+    }
+
+    public void showAllBooks() {
+
+        System.out.println("\t\t\t\tSHOWING ALL BOOKS\n");
+        System.out.println("S.No\t\tName\t\tAuthor\t\tAvailable Qty\t\tTotal Qty");
+        for (int i = 0; i < count; i++) {
+
+            System.out.println(theBooks[i].sNo + "\t\t" + theBooks[i].bookName + "\t\t" + theBooks[i].authorName + "\t\t" +
+                    theBooks[i].bookQtyCopy + "\t\t" + theBooks[i].bookQty);
+
+
+        }
+
+    }
 
 }
