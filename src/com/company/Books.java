@@ -101,4 +101,24 @@ public class Books {
 
     }
 
+    public void upgradeBookQty() {
+
+        System.out.println("\t\t\t\tUPGRADE QUANTITY OF A BOOK\n");
+        System.out.println("Enter Serial No of Book");
+        int sNo = input.nextInt();
+        for (int i = 0; i < count; i++) {
+
+            if (sNo == theBooks[i].sNo) {
+
+                System.out.println("Enter number of books to be added:");
+                int addingQty = input.nextInt();
+                theBooks[i].bookQty += addingQty;
+                theBooks[i].bookQtyCopy += addingQty;
+                return;
+            }
+        }
+    }
+
+
+
 }
