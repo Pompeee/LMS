@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Book {
 
-    private int sNo;
-    private String bookName;
+    public int sNo;
+    public String bookName;
     private String authorName;
     private int bookQty;
     private int bookQtyCopy;
