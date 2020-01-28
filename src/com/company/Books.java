@@ -154,6 +154,30 @@ public class Books {
 
     }
 
+    public Book checkOutBook() {
 
+        System.out.println("Enter serial number of books you want to checkout");
+        int sNo = input.nextInt();
+
+        int bookIndex = isAvailable(sNo);
+
+        if (bookIndex != -1) {
+
+            theBooks[bookIndex].bookQtyCopy--;
+
+            return theBooks[bookIndex];
+        }
+        return null;
+    }
+
+    public void checkInBook(Book b) {
+
+        for (int i = 0; i < count; i++) {
+            if (b.equals(theBooks[i])) {
+                theBooks[i].bookQtyCopy++;
+                return;
+            }
+        }
+    }
 
 }
