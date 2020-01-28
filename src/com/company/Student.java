@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Student {
 
-    private String studentName;
-    private String regNum;
+    public String studentName;
+    public String regNum;
 
     Book borrowedBooks[] = new Book[3];
     private int bookCount = 0;
